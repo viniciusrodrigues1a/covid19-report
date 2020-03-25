@@ -35,5 +35,6 @@ module.exports = {
     "react/jsx-one-expression-per-line": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "no-prototype-builtins": "off",
   },
 };
