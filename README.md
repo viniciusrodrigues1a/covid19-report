@@ -1,5 +1,9 @@
 <h1 align="center">Covid-19 Report</h1>
 
+<h2>Coronavirus daily report in a mobile-friendly SPA</h2>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d4376f02-84ac-4419-9fc0-0f6b9c8ca252/deploy-status)](https://app.netlify.com/sites/covid19-report/deploys)
+
 ## :page_facing_up: Table of Contents
 
 - [About](#about)
@@ -9,7 +13,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-A React Single Page Application consuming data from <a href="https://github.com/pomber/covid19/">pomber/covid19</a> that shows
+A mobile-friendly React SPA consuming data from <a href="https://github.com/pomber/covid19/">pomber/covid19</a>.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
