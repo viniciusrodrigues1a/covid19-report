@@ -126,7 +126,7 @@ export const MainContainer = styled.main`
 `;
 
 export const ChartContainer = styled.div`
-  width: 100%;
+  width: 80%;
   max-width: 1200rem;
   height: 400px;
 
