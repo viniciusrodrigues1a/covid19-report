@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-const api = axios.create({
+export const apiCovid = axios.create({
   baseURL: 'https://pomber.github.io/covid19/timeseries.json',
 });
 
-export default api;
+export const apiIpInfo = axios.create({
+  baseURL: 'http://ip-api.com/json/',
+});
