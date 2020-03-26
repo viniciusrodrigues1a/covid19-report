@@ -1,6 +1,6 @@
 <h1 align="center">Covid-19 Report</h1>
 
-<h2>Coronavirus daily report in a mobile-friendly SPA</h2>
+<h2 align="center">Coronavirus daily report in a mobile-friendly SPA</h2>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d4376f02-84ac-4419-9fc0-0f6b9c8ca252/deploy-status)](https://app.netlify.com/sites/covid19-report/deploys)
 
