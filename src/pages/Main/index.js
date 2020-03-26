@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect, useMemo } from 'react';
 import { FaHeart, FaArrowDown } from 'react-icons/fa';
 
-import api from '../../services/api';
+import languages from '../../languages';
+
+import { apiCovid, apiIpInfo } from '../../services/api';
 import history from '../../services/history';
 
 import {
   Container,
   Content,
   Header,
+  SelectLanguage,
+  SelectArrowLanguage,
   Title,
-  SelectContainer,
-  Select,
-  SelectArrow,
+  SelectCountryContainer,
+  SelectLanguageContainer,
+  SelectCountry,
+  SelectArrowCountry,
   ChartIcon,
   MainContainer,
   ChartContainer,
@@ -28,15 +32,32 @@ export default function Main() {
   const [apiData, setApiData] = useState({});
   const [dataset, setDataset] = useState({});
   const [cases, setCases] = useState({});
+  const [clientLanguage, setClientLanguage] = useState(languages.US);
 
   useEffect(() => {
     (() => {
       async function loadApiData() {
-        const response = await api.get();
+        const response = await apiCovid.get();
         setApiData(response.data);
       }
 
+      async function getClientLanguage() {
+        const { data } = await apiIpInfo.get();
+        const storedLanguage = localStorage.getItem('language');
+
+        if (storedLanguage) {
+          if (storedLanguage in languages) {
+            setClientLanguage(languages[storedLanguage]);
+          }
+        } else if (data.countryCode in languages) {
+          localStorage.setItem('language', data.countryCode);
+
+          setClientLanguage(languages[data.countryCode]);
+        }
+      }
+
       loadApiData();
+      getClientLanguage();
     })();
   }, []);
 
@@ -115,17 +136,17 @@ export default function Main() {
         labels: [...Object.keys(worldwideDatasetData)],
         datasets: [
           {
-            label: 'Confirmed cases',
+            label: clientLanguage.chart.confirmed,
             data: [...worldwideDatasetCasesArrayObject.confirmed],
             borderColor: '#fff',
           },
           {
-            label: 'Recovered cases',
+            label: clientLanguage.chart.recovered,
             data: [...worldwideDatasetCasesArrayObject.recovered],
             borderColor: '#0bed84',
           },
           {
-            label: 'Death cases',
+            label: clientLanguage.chart.deaths,
             data: [...worldwideDatasetCasesArrayObject.deaths],
             borderColor: '#ed290b',
           },
@@ -167,17 +188,17 @@ export default function Main() {
         labels: [...dates],
         datasets: [
           {
-            label: 'Confirmed cases',
+            label: clientLanguage.chart.confirmed,
             data: [...confirmedCases],
             borderColor: '#fff',
           },
           {
-            label: 'Recovered cases',
+            label: clientLanguage.chart.recovered,
             data: [...recoveredCases],
             borderColor: '#0bed84',
           },
           {
-            label: 'Death cases',
+            label: clientLanguage.chart.deaths,
             data: [...deathCases],
             borderColor: '#ed290b',
           },
@@ -193,34 +214,67 @@ export default function Main() {
       getCountryInfo();
       generateDatasetOfACountry();
     }
-  }, [country, apiData]);
+  }, [country, apiData, clientLanguage]);
 
-  function handleChangeSelect(e) {
+  function handleChangeSelectCountry(e) {
     history.push(encodeURI(e.target.value));
     setCountry(decodeURI(e.target.value));
   }
+
+  function handleChangeSelectLanguage(e) {
+    const key = e.target.value;
+    if (key in languages) {
+      localStorage.setItem('language', key);
+
+      setClientLanguage(languages[key]);
+    }
+  }
+
+  const selectLanguageDefaultValue = useMemo(() => clientLanguage.countryCode, [
+    clientLanguage,
+  ]);
 
   return (
     <Container>
       <Content>
         <Header>
+          <SelectLanguageContainer>
+            <SelectLanguage
+              onChange={handleChangeSelectLanguage}
+              value={selectLanguageDefaultValue}
+            >
+              {Object.keys(languages).map(key => (
+                <option key={key} value={key}>
+                  {key}
+                </option>
+              ))}
+            </SelectLanguage>
+            <SelectArrowLanguage>
+              <FaArrowDown color="#fff" size={14} />
+            </SelectArrowLanguage>
+          </SelectLanguageContainer>
           <div>
             <Title>
-              COVID-19 Report
+              {clientLanguage.header.title}
               <ChartIcon />
             </Title>
-            <SelectContainer>
-              <Select value={country} onChange={handleChangeSelect}>
-                <option>Worldwide</option>
+            <SelectCountryContainer>
+              <SelectCountry
+                value={country}
+                onChange={handleChangeSelectCountry}
+              >
+                <option value="Worldwide">Worldwide</option>
                 <option disabled>-</option>
                 {Object.keys(apiData).map(key => (
-                  <option key={key}>{key}</option>
+                  <option key={key} value={key}>
+                    {key}
+                  </option>
                 ))}
-              </Select>
-              <SelectArrow>
+              </SelectCountry>
+              <SelectArrowCountry>
                 <FaArrowDown color="#fff" />
-              </SelectArrow>
-            </SelectContainer>
+              </SelectArrowCountry>
+            </SelectCountryContainer>
           </div>
         </Header>
         <MainContainer>
@@ -229,20 +283,21 @@ export default function Main() {
           </ChartContainer>
           <Cases>
             <p>
-              Total confirmed: <span>{cases.confirmed}</span>
+              {clientLanguage.main.confirmed}: <span>{cases.confirmed}</span>
             </p>
             <p>
-              Total recovered: <span>{cases.recovered}</span>
+              {clientLanguage.main.recovered}: <span>{cases.recovered}</span>
             </p>
             <p>
-              Total deaths: <span>{cases.deaths}</span>
+              {clientLanguage.main.deaths}: <span>{cases.deaths}</span>
             </p>
           </Cases>
         </MainContainer>
       </Content>
       <Footer>
         <FooterInfo>
-          Made with <FaHeart color="#fff" size={12.8} /> by{' '}
+          {clientLanguage.footer.madeBy[0]} <FaHeart color="#fff" size={12.8} />{' '}
+          {clientLanguage.footer.madeBy[1]}{' '}
           <FooterInfoLink
             href="https://github.com/viniciusrodrigues1a/"
             target="_blank"
@@ -251,7 +306,7 @@ export default function Main() {
           </FooterInfoLink>
         </FooterInfo>
         <FooterInfo>
-          Data provided by{' '}
+          {clientLanguage.footer.dataProvidedBy}{' '}
           <FooterInfoLink
             href="https://github.com/pomber/covid19"
             target="_blank"
