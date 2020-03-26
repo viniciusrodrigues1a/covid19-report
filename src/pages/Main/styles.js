@@ -76,6 +76,10 @@ export const SelectLanguage = styled.select`
   &::-ms-expand {
     display: none;
   }
+
+  @media (max-width: 75rem) {
+    right: 3%;
+  }
 `;
 
 export const SelectArrowLanguage = styled.div`
@@ -84,6 +88,10 @@ export const SelectArrowLanguage = styled.div`
   right: 0%;
   margin: 0.2em 0.2em 0 0;
   pointer-events: none;
+
+  @media (max-width: 75rem) {
+    right: 3%;
+  }
 `;
 
 export const SelectCountry = styled.select`
