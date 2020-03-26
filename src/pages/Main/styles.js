@@ -3,6 +3,7 @@ import { FaChartLine } from 'react-icons/fa';
 import { Line } from 'react-chartjs-2';
 
 export const Container = styled.div`
+  background: #272c47;
   height: 100%;
   padding: 1.875rem 0;
 `;
