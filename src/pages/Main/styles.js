@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { FaChartLine } from 'react-icons/fa';
 import { Line } from 'react-chartjs-2';
+import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   background: #272c47;
   height: 100%;
-  padding: 1.875rem 0;
+  padding: 0.875rem 0 0;
 `;
 
 export const Content = styled.div`
@@ -19,6 +20,7 @@ export const Header = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   div {
     display: flex;
@@ -34,6 +36,7 @@ export const ChartIcon = styled(FaChartLine)`
 export const Title = styled.h1`
   color: #fff;
   font-size: 3em;
+  padding-top: 0.8em 0 0;
   font-weight: normal;
   display: flex;
   align-items: center;
@@ -45,13 +48,45 @@ export const Title = styled.h1`
   }
 `;
 
-export const SelectContainer = styled.div`
+export const SelectLanguageContainer = styled.div`
+  width: 100%;
+  margin: 1.5rem 0 0;
+`;
+
+export const SelectCountryContainer = styled.div`
   width: 100%;
   position: relative;
   margin: 1.5rem 0 0;
 `;
 
-export const Select = styled.select`
+export const SelectLanguage = styled.select`
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: #272c47;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  width: 3.5em;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+
+  &::-ms-expand {
+    display: none;
+  }
+`;
+
+export const SelectArrowLanguage = styled.div`
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin: 0.2em 0.2em 0 0;
+  pointer-events: none;
+`;
+
+export const SelectCountry = styled.select`
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -120,7 +155,7 @@ export const Cases = styled.div`
     }
 
     &:nth-child(2) {
-      color: rgba(11, 237, 132);
+      color: #0bed84;
     }
 
     &:nth-child(3) {
@@ -150,5 +185,32 @@ export const Cases = styled.div`
         margin-bottom: 2.25rem;
       }
     }
+  }
+`;
+
+export const Footer = styled.footer`
+  width: 100%;
+  background: ${darken(0.04, '#272c47')};
+  padding: 1.5rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const FooterInfo = styled.span`
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 1rem;
+`;
+
+export const FooterInfoLink = styled.a`
+  color: #0b75ed;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: ${lighten(0.1, '#0b75ed')};
   }
 `;
