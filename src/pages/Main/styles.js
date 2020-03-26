@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  max-width: 1200px;
+  max-width: 1200rem;
   height: 100%;
   margin: auto;
 `;
@@ -119,7 +119,7 @@ export const MainContainer = styled.main`
 
 export const ChartContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200rem;
   height: 400px;
 
   @media (max-width: 75em) {
