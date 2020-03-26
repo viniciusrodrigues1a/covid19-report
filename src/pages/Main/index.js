@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { FaArrowDown } from 'react-icons/fa';
+import { FaHeart, FaArrowDown } from 'react-icons/fa';
+
 import api from '../../services/api';
 import history from '../../services/history';
 
@@ -17,6 +18,9 @@ import {
   ChartContainer,
   Chart,
   Cases,
+  Footer,
+  FooterInfo,
+  FooterInfoLink,
 } from './styles';
 
 export default function Main() {
@@ -236,6 +240,26 @@ export default function Main() {
           </Cases>
         </MainContainer>
       </Content>
+      <Footer>
+        <FooterInfo>
+          Made with <FaHeart color="#fff" size={12.8} /> by{' '}
+          <FooterInfoLink
+            href="https://github.com/viniciusrodrigues1a/"
+            target="_blank"
+          >
+            Vinícius Rodrigues
+          </FooterInfoLink>
+        </FooterInfo>
+        <FooterInfo>
+          Data provided by{' '}
+          <FooterInfoLink
+            href="https://github.com/pomber/covid19"
+            target="_blank"
+          >
+            pomber/covid19
+          </FooterInfoLink>
+        </FooterInfo>
+      </Footer>
     </Container>
   );
 }
