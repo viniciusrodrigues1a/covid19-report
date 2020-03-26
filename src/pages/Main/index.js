@@ -4,7 +4,6 @@ import { FaHeart, FaArrowDown } from 'react-icons/fa';
 import languages from '../../languages';
 
 import { apiCovid, apiIpInfo } from '../../services/api';
-import history from '../../services/history';
 
 import {
   Container,
@@ -27,7 +26,7 @@ import {
   FooterInfoLink,
 } from './styles';
 
-export default function Main() {
+export default function Main({ history }) {
   const [country, setCountry] = useState('Worldwide');
   const [apiData, setApiData] = useState({});
   const [dataset, setDataset] = useState({});
