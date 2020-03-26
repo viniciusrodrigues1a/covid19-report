@@ -16,6 +16,10 @@ export default createGlobalStyle`
     height: 100%;
   }
 
+  #root {
+    background: #272c47;
+  }
+
   body, input, button {
     font-size: 100%;
     font-family: 'Roboto Mono', sans-serif;
