@@ -68,10 +68,11 @@ export const Select = styled.select`
   }
 `;
 
-export const SelectArrow = styled.div`
+export const SelectArrowCountry = styled.div`
   position: absolute;
   top: 12px;
   right: 25%;
+  pointer-events: none;
 `;
 
 export const MainContainer = styled.main`
