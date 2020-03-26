@@ -1,4 +1,4 @@
-<h1 align="center">Covid-19 Report</h1>
+<h1 align="center">COVID-19 Report</h1>
 
 <h2 align="center">Coronavirus daily report in a mobile-friendly SPA</h2>
 
