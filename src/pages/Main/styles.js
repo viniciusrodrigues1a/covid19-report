@@ -36,11 +36,15 @@ export const ChartIcon = styled(FaChartLine)`
 export const Title = styled.h1`
   color: #fff;
   font-size: 3em;
-  padding-top: 0.8em 0 0;
+  margin-top: 1rem;
   font-weight: normal;
   display: flex;
   align-items: center;
   text-align: center;
+
+  @media (max-width: 50rem) {
+    margin-top: 2rem;
+  }
 
   @media (max-width: 31.25rem) {
     font-size: 1.9em;
