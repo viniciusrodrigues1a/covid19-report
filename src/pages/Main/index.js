@@ -244,7 +244,7 @@ export default function Main({ history }) {
             >
               {Object.keys(languages).map(key => (
                 <option key={key} value={key}>
-                  {key}
+                  {languages[key].languageName}
                 </option>
               ))}
             </SelectLanguage>
