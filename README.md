@@ -2,7 +2,26 @@
 
 <h2 align="center">Coronavirus daily report in a mobile-friendly SPA</h2>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d4376f02-84ac-4419-9fc0-0f6b9c8ca252/deploy-status)](https://app.netlify.com/sites/covid19-report/deploys)
+<p align="center">
+  <a href="https://app.netlify.com/sites/covid19-report/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/d4376f02-84ac-4419-9fc0-0f6b9c8ca252/deploy-status">
+  </a>
+
+  <a href="https://www.codacy.com/manual/viniciusrodrigues1a/covid19-report?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=viniciusrodrigues1a/covid19-report&amp;utm_campaign=Badge_Grade">
+    <img src="https://api.codacy.com/project/badge/Grade/88e7b7902a754426a81aa687a290aca5">
+  </a>
+
+  <img src="https://img.shields.io/github/license/viniciusrodrigues1a/covid19-report">
+  <img src="https://img.shields.io/github/last-commit/viniciusrodrigues1a/covid19-report">
+</p>
+
+<hr>
+<a href="https://covid19-report.netlify.com/#/">
+  <p align="center">
+    Live on Netlify
+  </p>
+</a>
+<hr>
 
 ## :page_facing_up: Table of Contents
 
