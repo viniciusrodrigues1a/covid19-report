@@ -55,7 +55,10 @@ yarn start
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [ReactJS](https://reactjs.org/) - Frontend Framework
+- [styled-components](https://styled-components.com/)
 - [Axios](https://github.com/axios/axios)
+- [Chart.js](https://www.chartjs.org/)
+- [Polished](https://polished.js.org/)
 
 ## :memo: License <a name = "license"></a>
 
