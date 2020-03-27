@@ -10,12 +10,12 @@ import {
   Content,
   Header,
   SelectLanguage,
-  SelectArrowLanguage,
+  SelectLanguageArrow,
   Title,
   SelectCountryContainer,
   SelectLanguageContainer,
   SelectCountry,
-  SelectArrowCountry,
+  SelectCountryArrow,
   ChartIcon,
   MainContainer,
   ChartContainer,
@@ -248,9 +248,9 @@ export default function Main({ history }) {
                 </option>
               ))}
             </SelectLanguage>
-            <SelectArrowLanguage>
+            <SelectLanguageArrow>
               <FaArrowDown color="#fff" size={14} />
-            </SelectArrowLanguage>
+            </SelectLanguageArrow>
           </SelectLanguageContainer>
           <div>
             <Title>
@@ -270,9 +270,9 @@ export default function Main({ history }) {
                   </option>
                 ))}
               </SelectCountry>
-              <SelectArrowCountry>
+              <SelectCountryArrow>
                 <FaArrowDown color="#fff" />
-              </SelectArrowCountry>
+              </SelectCountryArrow>
             </SelectCountryContainer>
           </div>
         </Header>

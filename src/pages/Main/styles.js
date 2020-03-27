@@ -78,7 +78,7 @@ export const SelectLanguage = styled.select`
   }
 `;
 
-export const SelectArrowLanguage = styled.div`
+export const SelectLanguageArrow = styled.div`
   position: absolute;
   top: 0%;
   right: 2%;
@@ -103,7 +103,7 @@ export const SelectCountry = styled.select`
   }
 `;
 
-export const SelectArrowCountry = styled.div`
+export const SelectCountryArrow = styled.div`
   position: absolute;
   top: 12px;
   right: 25%;
