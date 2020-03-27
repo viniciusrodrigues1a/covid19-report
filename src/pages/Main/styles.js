@@ -68,8 +68,8 @@ export const SelectLanguage = styled.select`
   border: 1px solid #fff;
   border-radius: 4px;
   color: #fff;
-  width: 3.5em;
   position: absolute;
+  max-width: 9rem;
   top: 0%;
   right: 2%;
 
