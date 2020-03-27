@@ -2,6 +2,7 @@
 
 <h2 align="center">Coronavirus daily report in a mobile-friendly SPA</h2>
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5052c2650a68439b80a90fc28402d49d)](https://app.codacy.com/manual/viniciusrodrigues1a/covid19-report?utm_source=github.com&utm_medium=referral&utm_content=viniciusrodrigues1a/covid19-report&utm_campaign=Badge_Grade_Dashboard)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d4376f02-84ac-4419-9fc0-0f6b9c8ca252/deploy-status)](https://app.netlify.com/sites/covid19-report/deploys)
 
 ## :page_facing_up: Table of Contents
