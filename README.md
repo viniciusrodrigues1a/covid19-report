@@ -16,7 +16,7 @@
 </p>
 
 <hr>
-<a href="https://covid19-report.netlify.com/#/">
+<a href="https://covid19-report.netlify.com/">
   <p align="center">
     Live on Netlify
   </p>
