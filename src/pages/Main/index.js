@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { FaHeart, FaArrowDown } from 'react-icons/fa';
+import CountUp from 'react-countup';
 
 import languages from '../../languages';
 
@@ -30,7 +31,11 @@ export default function Main({ history }) {
   const [country, setCountry] = useState('Worldwide');
   const [apiData, setApiData] = useState({});
   const [dataset, setDataset] = useState({});
-  const [cases, setCases] = useState({});
+  const [cases, setCases] = useState({
+    confirmed: 0,
+    recovered: 0,
+    deaths: 0,
+  });
   const [clientLanguage, setClientLanguage] = useState(languages.US);
 
   useEffect(() => {
@@ -282,13 +287,28 @@ export default function Main({ history }) {
           </ChartContainer>
           <Cases>
             <p>
-              {clientLanguage.main.confirmed}: <span>{cases.confirmed}</span>
+              {clientLanguage.main.confirmed}:{' '}
+              <CountUp
+                end={cases.confirmed}
+                duration={1}
+                separator={clientLanguage.main.decimalSeparator}
+              />
             </p>
             <p>
-              {clientLanguage.main.recovered}: <span>{cases.recovered}</span>
+              {clientLanguage.main.recovered}:{' '}
+              <CountUp
+                end={cases.recovered}
+                duration={1}
+                separator={clientLanguage.main.decimalSeparator}
+              />
             </p>
             <p>
-              {clientLanguage.main.deaths}: <span>{cases.deaths}</span>
+              {clientLanguage.main.deaths}:{' '}
+              <CountUp
+                end={cases.deaths}
+                duration={1}
+                separator={clientLanguage.main.decimalSeparator}
+              />
             </p>
           </Cases>
         </MainContainer>
