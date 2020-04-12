@@ -6,6 +6,7 @@ export default {
     confirmed: 'Total confirmed',
     recovered: 'Total recovered',
     deaths: 'Total deaths',
+    decimalSeparator: '.',
   },
   chart: {
     confirmed: 'Confirmed cases',
