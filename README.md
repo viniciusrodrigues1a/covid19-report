@@ -62,4 +62,4 @@ yarn start
 
 ## :memo: License <a name = "license"></a>
 
-This project is under the MIT license. See the file LICENSE for more details.
+This project is under the MIT license. See the file [LICENSE](LICENSE) for more details.
